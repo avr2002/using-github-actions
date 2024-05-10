@@ -9,4 +9,5 @@ mypy . --exclude .venv || ((EXIT_STATUS++))
 ruff check . --config ruff.toml --fix || ((EXIT_STATUS++))
 isort . --settings .isort.cfg || ((EXIT_STATUS++))
 
+echo Exiting with status $EXIT_STATUS
 exit $EXIT_STATUS
