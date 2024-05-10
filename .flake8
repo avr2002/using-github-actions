@@ -5,7 +5,8 @@ extend-ignore =
     # darglint error: The docstring parameter type doesn't match function.
     DAR103,
     # multiple statements on one line (colon)
-    E701
+    E701,
+    D
 
 max-line-length = 99
 

@@ -41,9 +41,14 @@ repos:
       - id: requirements-txt-fixer
       # Prevent addition of new git submodules.
       - id: forbid-new-submodules
+
       # Prevent committing directly to trunk (since Bitbucket wants us to pay for this feature)
       - id: no-commit-to-branch
         args: ["--branch=main"]
+
+      # Detects *your* AWS credentials from ~/.aws/credentials file
+      # - id: detect-aws-credentials
+
       # Detects the presence of private keys
       - id: detect-private-key
 
@@ -75,6 +80,7 @@ repos:
     hooks:
       - id: mypy
         args: [--no-strict-optional, --ignore-missing-imports]
+        exclude: '\.pyi$'
 
   - repo: https://github.com/pycqa/flake8
     rev: "7.0.0"
