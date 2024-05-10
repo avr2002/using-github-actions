@@ -1,3 +1,4 @@
+# pylint: disable=R0903, C0114, E0015
 class Duck:
     """
     Random Duck class.
@@ -9,10 +10,11 @@ class Duck:
     def __getattr__(self, attr: str):
         if attr == "quack":
             return lambda: print("quack")
-        elif attr == "swim":
+
+        if attr == "swim":
             return lambda: print("splash")
-        else:
-            raise AttributeError
+
+        raise AttributeError
 
 
 duck = Duck()
