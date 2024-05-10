@@ -1,4 +1,9 @@
 class Duck:
+    """
+    Random Duck class.
+    Duck can quack and swim.
+    """
+
     def __init__(self) -> None: ...
 
     def __getattr__(self, attr: str):
@@ -10,10 +15,10 @@ class Duck:
             raise AttributeError
 
 
-# duck = Duck()
+duck = Duck()
 
 
 # # no type hinting!!
-# duck.quack()
-# duck.swim()
-# duck.eat()
+duck.quack()
+duck.swim()
+# duck.eat() # noqa: ERA001
